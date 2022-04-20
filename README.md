@@ -1,2 +1,1 @@
-# sa-relay-it
-Standalone relay it application.
+# Standalone relay it application.
