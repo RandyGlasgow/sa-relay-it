@@ -31,15 +31,16 @@ export class StatusModule {
         .then((status: Status) => {
           console.log('Status code already exists: ', status.statusCode);
         })
-        .catch(() =>
+        .catch((err) => {
+          console.log(err);
           // create the status code
           this.statusService.create({
             name,
             message,
             statusCode,
             isActive,
-          }),
-        );
+          });
+        });
     });
   }
 }
