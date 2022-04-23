@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateStatusDto } from './dto/create-status.dto';
@@ -11,15 +15,20 @@ export class StatusService {
     @InjectRepository(Status) private statusRepo: Repository<Status>,
   ) {}
 
-  create({ name, message, statusCode, isActive }: CreateStatusDto) {
-    const status = this.statusRepo.create({
+  async create({ name, message, statusCode, isActive }: CreateStatusDto) {
+    // check if status code already exists
+    const status = await this.statusRepo.findOne({ statusCode });
+
+    if (status) throw new UnauthorizedException('Status code already exists');
+
+    const newStatus = this.statusRepo.create({
       name,
       message,
       statusCode,
       isActive,
     });
 
-    return this.statusRepo.save(status);
+    return this.statusRepo.save(newStatus);
   }
 
   async update(statusCode: number, attr: UpdateStatusDto) {
@@ -48,7 +57,7 @@ export class StatusService {
     return status;
   }
 
-  findAll(attr?: Partial<CreateStatusDto>) {
+  async findAll(attr?: Partial<CreateStatusDto>) {
     console.log(attr);
     return this.statusRepo.find(attr);
   }
