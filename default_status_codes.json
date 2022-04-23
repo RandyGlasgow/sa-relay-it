@@ -1,0 +1,248 @@
+[
+  {
+    "isActive": true,
+    "message": "The server has received the request headers and the client should proceed to send the request body",
+    "statusCode": 200,
+    "name": "OK"
+  },
+  {
+    "isActive": true,
+    "message": "The request has been fulfilled, resulting in the creation of a new resource",
+    "statusCode": 201,
+    "name": "Created"
+  },
+  {
+    "isActive": true,
+    "message": "The request has been accepted for processing, but the processing has not been completed",
+    "statusCode": 202,
+    "name": "Accepted"
+  },
+  {
+    "isActive": true,
+    "message": "The returned meta-information is not the definitive set as available from the origin server, but is gathered from a local or a third-party copy",
+    "statusCode": 203,
+    "name": "Non-Authoritative Information"
+  },
+  {
+    "isActive": true,
+    "message": "The server successfully processed the request, but is returning information that may be from another source",
+    "statusCode": 204,
+    "name": "No Content"
+  },
+  {
+    "isActive": true,
+    "message": "The server successfully processed the request, but is not returning any content",
+    "statusCode": 205,
+    "name": "Reset Content"
+  },
+  {
+    "isActive": true,
+    "message": "The server successfully processed the request, but is not returning any content, and requires that the requester reset the document view",
+    "statusCode": 206,
+    "name": "Partial Content"
+  },
+  {
+    "isActive": true,
+    "message": "The server is delivering only part of the resource due to a range header sent by the client",
+    "statusCode": 207,
+    "name": "Multi-Status"
+  },
+  {
+    "isActive": true,
+    "message": "The client has indicated preconditions in its headers which the server does not meet",
+    "statusCode": 208,
+    "name": "Already Reported"
+  },
+  {
+    "isActive": true,
+    "message": "The message body that follows is an XML message and can contain a number of separate response codes, depending on how many sub-requests were made",
+    "statusCode": 226,
+    "name": "IM Used"
+  },
+  {
+    "isActive": true,
+    "message": "The requested resource is available at another URI, usually provided in the Location header",
+    "statusCode": 300,
+    "name": "Multiple Choices"
+  },
+  {
+    "isActive": true,
+    "message": "The requested page has moved to a new URL",
+    "statusCode": 301,
+    "name": "Moved Permanently"
+  },
+  {
+    "isActive": true,
+    "message": "The requested page has moved temporarily to a new URL",
+    "statusCode": 302,
+    "name": "Found"
+  },
+  {
+    "isActive": true,
+    "message": "The requested page has not been modified since last requested",
+    "statusCode": 304,
+    "name": "Not Modified"
+  },
+  {
+    "isActive": true,
+    "message": "The requested page does not exist",
+    "statusCode": 305,
+    "name": "Use Proxy"
+  },
+  {
+    "isActive": true,
+    "message": "The requested resource must be accessed through the proxy given by the Location header",
+    "statusCode": 307,
+    "name": "Temporary Redirect"
+  },
+  {
+    "isActive": true,
+    "message": "The requested resource resides temporarily under a different URI",
+    "statusCode": 308,
+    "name": "Permanent Redirect"
+  },
+  {
+    "isActive": true,
+    "message": "The request could not be understood by the server due to malformed syntax",
+    "statusCode": 400,
+    "name": "Bad Request"
+  },
+  {
+    "isActive": true,
+    "message": "The request requires user authentication",
+    "statusCode": 401,
+    "name": "Unauthorized"
+  },
+  {
+    "isActive": true,
+    "message": "The requested resource requires user authentication",
+    "statusCode": 402,
+    "name": "Payment Required"
+  },
+  {
+    "isActive": true,
+    "message": "The server understood the request, but is refusing to fulfill it",
+    "statusCode": 403,
+    "name": "Forbidden"
+  },
+  {
+    "isActive": true,
+    "message": "The requested resource could not be found but may be available again in the future",
+    "statusCode": 404,
+    "name": "Not Found"
+  },
+  {
+    "isActive": true,
+    "message": "A request was made of a resource using a request method not supported by that resource",
+    "statusCode": 405,
+    "name": "Method Not Allowed"
+  },
+  {
+    "isActive": true,
+    "message": "The requested resource is only capable of generating content not acceptable according to the Accept headers sent in the request",
+    "statusCode": 406,
+    "name": "Not Acceptable"
+  },
+  {
+    "isActive": true,
+    "message": "The client must first authenticate itself with the proxy",
+    "statusCode": 407,
+    "name": "Proxy Authentication Required"
+  },
+  {
+    "isActive": true,
+    "message": "The server timed out waiting for the request",
+    "statusCode": 408,
+    "name": "Request Timeout"
+  },
+  {
+    "isActive": true,
+    "message": "The request could not be completed due to a conflict with the current state of the resource",
+    "statusCode": 409,
+    "name": "Conflict"
+  },
+  {
+    "isActive": true,
+    "message": "The server encountered an unexpected condition which prevented it from fulfilling the request",
+    "statusCode": 500,
+    "name": "Internal Server Error"
+  },
+  {
+    "isActive": true,
+    "message": "The server does not support the functionality required to fulfill the request",
+    "statusCode": 501,
+    "name": "Not Implemented"
+  },
+  {
+    "isActive": true,
+    "message": "The server, while acting as a gateway or proxy, received an invalid response from the upstream server it accessed in attempting to fulfill the request",
+    "statusCode": 502,
+    "name": "Bad Gateway"
+  },
+  {
+    "isActive": true,
+    "message": "The server is currently unable to handle the request due to a temporary overloading or maintenance of the server",
+    "statusCode": 503,
+    "name": "Service Unavailable"
+  },
+  {
+    "isActive": true,
+    "message": "The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server specified by the URI",
+    "statusCode": 504,
+    "name": "Gateway Timeout"
+  },
+  {
+    "isActive": true,
+    "message": "The server does not support, or refuses to support, the HTTP protocol version that was used in the request message",
+    "statusCode": 505,
+    "name": "HTTP Version Not Supported"
+  },
+  {
+    "isActive": true,
+    "message": "The server has an internal configuration error: the chosen variant resource is configured to engage in transparent content negotiation itself, and is therefore not a proper end point in the negotiation process",
+    "statusCode": 506,
+    "name": "Variant Also Negotiates"
+  },
+  {
+    "isActive": true,
+    "message": "The server has an internal configuration error: the server has a maximum data segment size and the resource requires larger segments",
+    "statusCode": 507,
+    "name": "Insufficient Storage"
+  },
+  {
+    "isActive": true,
+    "message": "The server has an internal configuration error: the server is unable to store the representation needed to complete the request",
+    "statusCode": 508,
+    "name": "Loop Detected"
+  },
+  {
+    "isActive": true,
+    "message": "The server detected an infinite loop while processing the request",
+    "statusCode": 509,
+    "name": "Bandwidth Limit Exceeded"
+  },
+  {
+    "isActive": true,
+    "message": "The server has an internal configuration error: the server is unable to store the representation needed to complete the request",
+    "statusCode": 510,
+    "name": "Not Extended"
+  },
+  {
+    "isActive": true,
+    "message": "The server has an internal configuration error: the server is unable to store the representation needed to complete the request",
+    "statusCode": 511,
+    "name": "Network Authentication Required"
+  },
+  {
+    "isActive": true,
+    "message": "The server has an internal configuration error: the server is unable to store the representation needed to complete the request",
+    "statusCode": 598,
+    "name": "Network read timeout error"
+  },
+  {
+    "isActive": true,
+    "message": "The server has an internal configuration error: the server is unable to store the representation needed to complete the request",
+    "statusCode": 599,
+    "name": "Network connect timeout error"
+  }
+]
