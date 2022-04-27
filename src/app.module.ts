@@ -11,7 +11,7 @@ import { StatusModule } from './status/status.module';
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: './db.sqlite',
-      synchronize: true,
+      synchronize: process.env.NODE_ENV !== 'production',
       entities: [Status],
     }),
   ],

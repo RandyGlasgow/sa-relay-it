@@ -26,21 +26,15 @@ export class StatusModule {
       const { name, message, statusCode, isActive } = code;
 
       // check if the status code already exists
-      const existing = this.statusService
-        .findOne(statusCode)
-        .then((status: Status) => {
-          console.log('Status code already exists: ', status.statusCode);
-        })
-        .catch((err) => {
-          console.log(err);
-          // create the status code
-          this.statusService.create({
-            name,
-            message,
-            statusCode,
-            isActive,
-          });
+      const existing = this.statusService.findOne(statusCode).catch((err) => {
+        // create the status code
+        this.statusService.create({
+          name,
+          message,
+          statusCode,
+          isActive,
         });
+      });
     });
   }
 }

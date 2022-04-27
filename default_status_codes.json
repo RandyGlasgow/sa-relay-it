@@ -163,6 +163,72 @@
   },
   {
     "isActive": true,
+    "message": "The requested resource is no longer available at the server and no forwarding address is known",
+    "statusCode": 410,
+    "name": "Gone"
+  },
+  {
+    "isActive": true,
+    "message": "The server refuses to accept the request without a defined Content-Length",
+    "statusCode": 411,
+    "name": "Length Required"
+  },
+  {
+    "isActive": true,
+    "message": "The precondition given in one or more of the request-header fields evaluated to false when it was tested on the server",
+    "statusCode": 412,
+    "name": "Precondition Failed"
+  },
+  {
+    "isActive": true,
+    "message": "The server is refusing to process a request because the request entity is larger than the server is willing or able to process",
+    "statusCode": 413,
+    "name": "Payload Too Large"
+  },
+  {
+    "isActive": true,
+    "message": "The server is refusing to service the request because the Request-URI is longer than the server is willing to interpret",
+    "statusCode": 414,
+    "name": "URI Too Long"
+  },
+  {
+    "isActive": true,
+    "message": "The server is refusing to service the request because the entity of the request is in a format not supported by the requested resource for the requested method",
+    "statusCode": 415,
+    "name": "Unsupported Media Type"
+  },
+  {
+    "isActive": true,
+    "message": "A request was made of a resource using a request method not supported by that resource for the requested method",
+    "statusCode": 416,
+    "name": "Requested Range Not Satisfiable"
+  },
+  {
+    "isActive": true,
+    "message": "The expectation given in an Expect request-header field could not be met by this server",
+    "statusCode": 417,
+    "name": "Expectation Failed"
+  },
+  {
+    "isActive": true,
+    "message": "The server refuses the attempt to brew coffee with a teapot",
+    "statusCode": 418,
+    "name": "I'm a teapot"
+  },
+  {
+    "statusCode": 422,
+    "isActive": true,
+    "message": "The request was well-formed but was unable to be followed due to semantic errors",
+    "name": "Unprocessable Entity"
+  },
+  {
+    "statusCode": 429,
+    "isActive": true,
+    "message": "The user has sent too many requests in a given amount of time. Intended for use with rate limiting schemes",
+    "name": "Too Many Requests"
+  },
+  {
+    "isActive": true,
     "message": "The server encountered an unexpected condition which prevented it from fulfilling the request",
     "statusCode": 500,
     "name": "Internal Server Error"
