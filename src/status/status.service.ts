@@ -49,8 +49,8 @@ export class StatusService {
     return this.statusRepo.remove(status);
   }
 
-  async findOne(statusCode: number) {
-    const status = await this.statusRepo.findOne({ statusCode });
+  async findOne(attr: Partial<CreateStatusDto>) {
+    const status = await this.statusRepo.findOne({ ...attr });
 
     if (!status) throw new NotFoundException('Status not found');
 
@@ -58,7 +58,6 @@ export class StatusService {
   }
 
   async findAll(attr?: Partial<CreateStatusDto>) {
-    console.log(attr);
     return this.statusRepo.find(attr);
   }
 }
