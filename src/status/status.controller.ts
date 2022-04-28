@@ -36,7 +36,7 @@ export class StatusController {
     return this.statusService.create(body);
   }
 
-  @Get('/:code')
+  @Get('/:code/*')
   @ApiResponse({
     description: 'will return a status code based on the code provided',
   })
@@ -50,7 +50,7 @@ export class StatusController {
     return res.status(obj.statusCode).send(serialize(StatusDto, obj));
   }
 
-  @Get('/:delay/:code')
+  @Get('/:delay/:code/')
   @ApiResponse({
     description:
       'will return a delayed response of type status code based on the code provided',
