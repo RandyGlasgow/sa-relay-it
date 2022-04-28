@@ -26,7 +26,7 @@ export class StatusModule {
       const { name, message, statusCode, isActive } = code;
 
       // check if the status code already exists
-      this.statusService.findOne(statusCode).catch(() => {
+      this.statusService.findOne({ statusCode }).catch(() => {
         // create the status code
         this.statusService.create({
           name,
