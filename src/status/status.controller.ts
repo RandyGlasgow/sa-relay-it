@@ -30,46 +30,47 @@ export class StatusController {
   getAllActiveStatusCodes() {
     return this.statusService.findAll({ isActive: true });
   }
+  @Get('/:code')
+  @Get('/:code/*')
+  async getStatusCode(@Res() res, @Param('code') code: string) {
+    // test if code is number, regex
+    if (!/^\d+$/.test(code)) return new NotFoundException();
+    const status = await this.statusService.findOne({
+      statusCode: parseInt(code),
+      isActive: true,
+    });
+    return res.status(status.statusCode).send(serialize(StatusDto, status));
+  }
+
+  @Get('/:code/delay/:delay*')
+  async getStatusCodeWithDelay(
+    @Res() res,
+    @Param('code') code: string,
+    @Param('delay') delay: string,
+  ) {
+    const regex = /^\d+$/;
+
+    if (!regex.test(code)) throw new NotFoundException('Status code not found');
+
+    // get status code
+    const status = await this.statusService.findOne({
+      statusCode: parseInt(code),
+    });
+    // regex to check if delay is a number
+    if (!delay || !regex.test(delay)) {
+      // if not a number return the status code requested
+      return res.status(status.statusCode).send(serialize(StatusDto, status));
+    }
+
+    // if delay is a number return the status code requested with delay
+    setTimeout(() => {
+      return res.status(status.statusCode).send(serialize(StatusDto, status));
+    }, parseInt(delay));
+  }
 
   @Post()
   createNewStatusCode(@Body() body: CreateStatusDto) {
     return this.statusService.create(body);
-  }
-
-  @Get('/:code/*')
-  @ApiResponse({
-    description: 'will return a status code based on the code provided',
-  })
-  async getStatusCode(@Param('code') code: string, @Res() res) {
-    // get the desired status code
-    const obj = await this.statusService.findOne(parseInt(code));
-
-    if (!obj.isActive) throw new NotFoundException('Status code not found');
-
-    // return a not available status code
-    return res.status(obj.statusCode).send(serialize(StatusDto, obj));
-  }
-
-  @Get('/:delay/:code/')
-  @ApiResponse({
-    description:
-      'will return a delayed response of type status code based on the code provided',
-  })
-  async getStatusCodeWithDelay(
-    @Param('delay') delay: string,
-    @Param('code') code: string,
-    @Res() res,
-  ) {
-    // get the status code
-    const obj = await this.statusService.findOne(parseInt(code));
-
-    if (!obj.isActive) throw new NotFoundException('Status code not found');
-    // if the status code is active
-    // return the status code as the response with a delay
-
-    const timer = setTimeout(() => {
-      res.status(obj.statusCode).send(serialize(StatusDto, obj));
-    }, parseInt(delay));
   }
 
   @Patch('/:code')
